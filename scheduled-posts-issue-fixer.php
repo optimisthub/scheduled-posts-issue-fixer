@@ -6,9 +6,9 @@
  * Author:          @optimisthub
  * Author URI:      https://optimisthub.com
  * Text Domain:     scheduled-posts-issue-fixer 
- * Version:         0.1.0
+ * Version:         1.0.0
  * Requires at least: 5.0
- * Tested up to: 6.0
+ * Tested up to: 6.1.1
  * Requires PHP: 7.1
  * License: GPLv2
  */
