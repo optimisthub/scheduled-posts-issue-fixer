@@ -23,7 +23,7 @@ Not : *Scheduled Posts Issue Fixer* eklentisi asla performans sorunu yaratmaz ve
 
 ## Sıkça Sorulan Sorular 
 
-### klentiyi sitemde etkinleştirdim, neden Admin Panel'de göremiyorum?
+### Eklentiyi sitemde etkinleştirdim, neden Admin Panel'de göremiyorum?
 
 Scheduled Posts Issue Fixer bir kur ve unut eklentisidir. Eklenti yüklenip etkinleştirildiğinde sitenizin planlanmış gönderileri otomatik olarak kontrol edileceğinden herhangi bir ayar alanı yoktur.
 
