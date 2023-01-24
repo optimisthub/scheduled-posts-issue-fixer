@@ -1,3 +1,5 @@
+<img src="https://optimisthub.com/cdn/plugins/wp-scheduled-posts-issue-fixer-github-banner.jpg" alt="Optimisthub" style="float: left; width:100%; margin-bottom:30px" />
+
 # Scheduled Posts Issue Fixer
 * Minimum WordPress Sürümü : 5.0
 * Test Edilen WordPress Sürümü : 6.1.1
