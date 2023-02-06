@@ -1,4 +1,4 @@
-<img src="https://optimisthub.com/cdn/plugins/wp-scheduled-posts-issue-fixer-github-banner.jpg" alt="Optimisthub" style="float: left; width:100%; margin-bottom:30px" />
+<img src="assets/banner-1544x500.png" alt="Optimisthub" style="float: left; width:100%; margin-bottom:30px" />
 
 # Scheduled Posts Issue Fixer
 * Minimum WordPress Sürümü : 5.0
@@ -31,6 +31,18 @@ Scheduled Posts Issue Fixer bir kur ve unut eklentisidir. Eklenti yüklenip etki
 
 ## Versiyon Geçmişi 
 
+#### 1.0.4
+
+* WordPress Plugins Store Assets güncellemeleri.
+#### 1.0.3
+
+* Github autodeployer eklendi.
+#### 1.0.2
+
+* Geliştirici ismi düzenlendi.
+#### 1.0.1
+
+* Readme dosyasına manuel kurulum detayları eklendi.
 #### 1.0.0
 
 * Stabil versiyon yayınlandı.
