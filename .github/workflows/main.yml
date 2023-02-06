@@ -5,13 +5,21 @@ on:
       - "*"
 jobs:
   tag:
-    name: New tag
+    name: Deploy New Release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: WordPress Plugin Deploy
         uses: 10up/action-wordpress-plugin-deploy@stable
+        with:
+          generate-zip: true
         env:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SLUG: scheduled-posts-issue-fixer
+      - name: WordPress.org plugin asset/readme update
+        uses: actions/upload-release-asset@v1
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }} 
+      
