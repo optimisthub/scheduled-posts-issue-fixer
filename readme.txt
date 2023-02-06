@@ -47,6 +47,10 @@ Scheduled Posts Issue Fixer is a 'set and forget' plugin. There are no settings 
 
 == Changelog == 
 
+= 1.0.4 =
+
+* Github readme file update and assets added.
+
 = 1.0.3 =
 
 * Github action.
