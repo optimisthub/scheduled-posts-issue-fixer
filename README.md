@@ -1,4 +1,4 @@
-<img src="assets/banner-1544x500.png" alt="Optimisthub" style="float: left; width:100%; margin-bottom:30px" />
+<img src=".wordpress-org/assets/banner-1544x500.png" alt="Optimisthub" style="float: left; width:100%; margin-bottom:30px" />
 
 # Scheduled Posts Issue Fixer
 * Minimum WordPress Sürümü : 5.0

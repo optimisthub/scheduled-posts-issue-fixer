@@ -4,7 +4,7 @@ Tags: Scheduled Posts, Scheduled Posts Issues, Publish Scheduled Posts, Missed s
 Requires at least: 5.0
 Tested up to: 6.1.1
 Requires PHP: 7.1
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
