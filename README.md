@@ -31,6 +31,9 @@ Scheduled Posts Issue Fixer bir kur ve unut eklentisidir. Eklenti yüklenip etki
 
 ## Versiyon Geçmişi 
 
+#### 1.0.5
+
+* Svg icon removed for security issue.
 #### 1.0.4
 
 * WordPress Plugins Store Assets güncellemeleri.
