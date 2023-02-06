@@ -2,11 +2,11 @@
 /**
  * Plugin Name:     Scheduled Posts Issue Fixer
  * Plugin URI:      https://github.com/optimisthub/scheduled-posts-issue-fixer
- * Description:     Zamanlama kaçırıldı uyarısı veren zamanlanmış yazılar için, kesin çözüm sunar. Her dakikada bir çalışan bir Cron sayesinde, zamanlaması kaçırılan zamanlanmış yazılar otomatik olarak yayınlanır. Eklenti sitedeki performansınızı etkilemeden çalışabilir ve bunun için programlanmıştır.
- * Author:          @optimisthub
+ * Description:     This plugin does one thing and does it well: it fixes the missed schedule error and triggers your scheduled posts to publish on time. We’ve developed this post scheduler plugin with performance in mind, so it won’t affect the speed or performance of your website.
+ * Author:          optimisthub
  * Author URI:      https://optimisthub.com
  * Text Domain:     scheduled-posts-issue-fixer 
- * Version:         1.0.0
+ * Version:         1.0.3
  * Requires at least: 5.0
  * Tested up to: 6.1.1
  * Requires PHP: 7.1
