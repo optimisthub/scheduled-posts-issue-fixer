@@ -4,7 +4,7 @@
 * Minimum WordPress Sürümü : 5.0
 * Test Edilen WordPress Sürümü : 6.1.1
 * PHP : 7.1+
-* Stabil Versiyon : 1.0.7
+* Stabil Versiyon : 1.0.9
 * Lisans: GPLv2 ya da daha sonrası
 * Lisans URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,3 +32,6 @@ Scheduled Posts Issue Fixer bir kur ve unut eklentisidir. Eklenti yüklenip etki
 ## Versiyon Geçmişi 
 
 * https://plugins.trac.wordpress.org/log/scheduled-posts-issue-fixer/
+## WordPress Eklenti Dizini Adresi
+
+* https://wordpress.org/plugins/scheduled-posts-issue-fixer/
