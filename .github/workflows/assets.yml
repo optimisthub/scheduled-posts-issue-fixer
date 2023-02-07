@@ -2,7 +2,7 @@ name: Plugin asset/readme update
 on:
   push:
     branches:
-    - trunk
+    - master
 jobs:
   trunk:
     name: Updating assets/readme files.
@@ -14,3 +14,4 @@ jobs:
       env:
         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+        IGNORE_OTHER_FILES: true
