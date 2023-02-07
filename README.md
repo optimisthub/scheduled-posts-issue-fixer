@@ -21,7 +21,7 @@ Not : *Scheduled Posts Issue Fixer* eklentisi asla performans sorunu yaratmaz ve
 ## Kurulum 
 
 * Zip dosyasını indirip, açıp içinden çıkan `scheduled-posts-issue-fixer` klasörünü `/wp-content/plugins/` dizinine yükleyiniz.
-* Eklentiler menüsünden, `Scheduled Posts Issue Fixer` eklentisiniaktif hale gtiriniz. Eklenti otomatik olarak çalışmaya başlayacaktır.
+* Eklentiler menüsünden, `Scheduled Posts Issue Fixer` eklentisini aktif hale getiriniz. Eklenti otomatik olarak çalışmaya başlayacaktır.
 
 ## Sıkça Sorulan Sorular 
 
