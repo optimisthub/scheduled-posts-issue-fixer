@@ -43,8 +43,10 @@ class ScheduledPostsIssueFixer
     public function publishPosts()
     {
         global $wpdb;
-
-        $currentTime = current_time( 'mysql', 0 );
+        
+        $gmt_offset = (int) get_option( 'gmt_offset', 0 );
+        $gmt_offset = apply_filters( 'scheduled_posts_issue_fixer_gmt_offset', $gmt_offset );
+        $currentTime = current_time( 'mysql', (int) $gmt_offset );
 
         $postIds = $wpdb->get_col(
             $wpdb->prepare
