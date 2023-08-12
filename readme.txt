@@ -2,9 +2,9 @@
 Contributors: optimisthub, fatih-toprak
 Tags: Scheduled Posts, Scheduled Posts Issues, Publish Scheduled Posts, Missed schedule, Cron
 Requires at least: 5.0
-Tested up to: 6.1.1
+Tested up to: 6.3
 Requires PHP: 7.1
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,10 @@ Note : Scheduled Posts Issue Fixer plugin never creates performance problems and
 Scheduled Posts Issue Fixer is a 'set and forget' plugin. There are no settings fields as your site's scheduled posts will be automatically checked when the plugin is installed and activated.
 
 == Changelog == 
+
+= 1.0.10 =
+
+* gmt_offset issue fixed.
 
 = 1.0.9 - 1.0.5 =
 

@@ -2,9 +2,9 @@
 
 # Scheduled Posts Issue Fixer
 * Minimum WordPress Sürümü : 5.0
-* Test Edilen WordPress Sürümü : 6.1.1
+* Test Edilen WordPress Sürümü : 6.3
 * PHP : 7.1+
-* Stabil Versiyon : 1.0.9
+* Stabil Versiyon : 1.0.10
 * Lisans: GPLv2 ya da daha sonrası
 * Lisans URI: https://www.gnu.org/licenses/gpl-2.0.html
 
