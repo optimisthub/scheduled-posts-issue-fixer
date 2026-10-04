@@ -1,0 +1,35 @@
+{
+    "name": "optimisthub/scheduled-posts-issue-fixer",
+    "description": "Fixes the WordPress missed schedule error so scheduled posts publish on time.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Optimist Hub",
+            "homepage": "https://optimisthub.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "wp-coding-standards/wpcs": "^3.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OptimistHub\\ScheduledPostsIssueFixer\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "lint": "php -l scheduled-posts-issue-fixer.php && find src -name '*.php' -exec php -l {} \\;"
+    }
+}

@@ -1,68 +1,72 @@
 <?php
 /**
- * Plugin Name:     Scheduled Posts Issue Fixer
- * Plugin URI:      https://github.com/optimisthub/scheduled-posts-issue-fixer
- * Description:     This plugin does one thing and does it well: it fixes the missed schedule error and triggers your scheduled posts to publish on time. We’ve developed this post scheduler plugin with performance in mind, so it won’t affect the speed or performance of your website.
- * Author:          optimisthub
- * Author URI:      https://optimisthub.com
- * Text Domain:     scheduled-posts-issue-fixer 
- * Version:         1.0.10
- * Requires at least: 5.0
- * Tested up to: 6.1.1
- * Requires PHP: 7.1
- * License: GPLv2
+ * Plugin Name:       Scheduled Posts Issue Fixer
+ * Plugin URI:        https://github.com/optimisthub/scheduled-posts-issue-fixer
+ * Description:       Fixes the "missed schedule" error and publishes your scheduled posts, pages and custom post types on time. Lightweight and performance friendly.
+ * Version:           2.0.0
+ * Requires at least: 6.0
+ * Tested up to:      7.1
+ * Requires PHP:      7.4
+ * Author:            Optimist Hub
+ * Author URI:        https://optimisthub.com
+ * License:           GPL-2.0-or-later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       scheduled-posts-issue-fixer
+ * Domain Path:       /languages
+ *
+ * @package OptimistHub\ScheduledPostsIssueFixer
  */
 
-class ScheduledPostsIssueFixer
-{
+declare( strict_types = 1 );
 
-    const CRON_NAME = 'scheduled_posts_issue_fixed';
-    const CRON_TIME = 'every_minute';
-    const SQL_ROW_LIMIT = 20;
+namespace OptimistHub\ScheduledPostsIssueFixer;
 
-    public function __construct()
-    {
-        register_activation_hook(__FILE__,[$this, 'registerCron']);
-        register_deactivation_hook(__FILE__,[$this, 'deRegisterCron']);
-        add_action(self::CRON_NAME, [$this, 'publishPosts']);
-    }
+defined( 'ABSPATH' ) || exit;
 
-    public function registerCron() 
-    {
-        if (! wp_next_scheduled(self::CRON_NAME )) 
-        {
-            wp_schedule_event(time(), self::CRON_TIME, self::CRON_NAME);
-        }
-    }
+define( 'SPIF_VERSION', '2.0.0' );
+define( 'SPIF_FILE', __FILE__ );
+define( 'SPIF_DIR', plugin_dir_path( __FILE__ ) );
 
-    public function deRegisterCron()
-    {
-        wp_clear_scheduled_hook(CRON_NAME);
-    }
+if ( is_readable( SPIF_DIR . 'vendor/autoload.php' ) ) {
+	require_once SPIF_DIR . 'vendor/autoload.php';
+} else {
+	spl_autoload_register(
+		static function ( $class ) {
+			$prefix = __NAMESPACE__ . '\\';
 
-    public function publishPosts()
-    {
-        global $wpdb;
-        
-        $gmt_offset = (int) get_option( 'gmt_offset', 0 );
-        $gmt_offset = apply_filters( 'scheduled_posts_issue_fixer_gmt_offset', $gmt_offset );
-        $currentTime = current_time( 'mysql', (int) $gmt_offset );
+			if ( 0 !== strpos( $class, $prefix ) ) {
+				return;
+			}
 
-        $postIds = $wpdb->get_col(
-            $wpdb->prepare
-            (
-                "SELECT ID FROM {$wpdb->posts} WHERE post_date <= %s AND post_status='future' LIMIT %d", $currentTime, self::SQL_ROW_LIMIT 
-            ) 
-        );
+			$relative = substr( $class, strlen( $prefix ) );
+			$path     = SPIF_DIR . 'src/' . str_replace( '\\', '/', $relative ) . '.php';
 
-        if ( ! count( $postIds ) )
-        {
-            return;
-        }
-
-        array_map( 'wp_publish_post', $postIds );
-    }
-
+			if ( is_readable( $path ) ) {
+				require_once $path;
+			}
+		}
+	);
 }
 
-new ScheduledPostsIssueFixer();
+require_once SPIF_DIR . 'src/Plugin.php';
+
+register_activation_hook( __FILE__, array( Plugin::class, 'activate' ) );
+register_deactivation_hook( __FILE__, array( Plugin::class, 'deactivate' ) );
+
+/**
+ * Boot the plugin.
+ *
+ * @return Plugin
+ */
+function plugin() {
+	static $instance = null;
+
+	if ( null === $instance ) {
+		$instance = new Plugin();
+		$instance->boot();
+	}
+
+	return $instance;
+}
+
+plugin();

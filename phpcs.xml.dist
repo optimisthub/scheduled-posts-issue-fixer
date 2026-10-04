@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<ruleset name="Scheduled Posts Issue Fixer">
+    <description>WordPress Coding Standards for the Scheduled Posts Issue Fixer plugin.</description>
+
+    <file>scheduled-posts-issue-fixer.php</file>
+    <file>uninstall.php</file>
+    <file>src/</file>
+
+    <exclude-pattern>/vendor/*</exclude-pattern>
+    <exclude-pattern>/node_modules/*</exclude-pattern>
+
+    <arg name="extensions" value="php"/>
+    <arg name="colors"/>
+    <arg value="sp"/>
+    <arg name="parallel" value="8"/>
+
+    <rule ref="WordPress">
+        <!-- PSR-4 file names (Plugin.php) are intentional. -->
+        <exclude name="WordPress.Files.FileName"/>
+    </rule>
+
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="scheduled-posts-issue-fixer"/>
+            </property>
+        </properties>
+    </rule>
+
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes" type="array">
+                <element value="spif"/>
+                <element value="scheduled_posts_issue_fixer"/>
+                <element value="OptimistHub"/>
+                <element value="plugin"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!--
+        The parameter is conventionally named $class in every PSR-4 autoloader,
+        including Composer's own.
+    -->
+    <rule ref="Universal.NamingConventions.NoReservedKeywordParameterNames.classFound">
+        <severity>0</severity>
+    </rule>
+
+    <!--
+        A one-minute interval is the entire point of this plugin: it exists to
+        publish posts that WordPress has left showing "missed schedule". The
+        job is a single indexed query that returns immediately when there is
+        nothing due, so the usual performance concern does not apply.
+    -->
+    <rule ref="WordPress.WP.CronInterval.CronSchedulesInterval">
+        <severity>0</severity>
+    </rule>
+
+    <config name="minimum_supported_wp_version" value="6.0"/>
+    <config name="testVersion" value="7.4-"/>
+</ruleset>
