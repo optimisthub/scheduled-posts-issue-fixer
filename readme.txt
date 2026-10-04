@@ -8,7 +8,7 @@ Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Fixes the WordPress "missed schedule" error. Posts, pages and custom post types that miss their scheduled time are published automatically by a lightweight cron job.
+Fixes the WordPress "missed schedule" error. Posts that miss their scheduled time publish automatically via a lightweight cron job.
 
 == Description ==
 
