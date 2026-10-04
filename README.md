@@ -54,12 +54,60 @@ Bu eklenti, zamanı geçmiş ama hâlâ `future` durumunda bekleyen yazıları b
 
 ### Composer ile kurulum
 
-Bu paket Packagist'te yayınlanmadığı için önce VCS deposu olarak tanıtmanız gerekir:
+Bu paket Packagist'te yayınlanmadığı için önce GitHub deposunu VCS deposu
+olarak tanıtmanız gerekir:
 
 ```bash
 composer config repositories.optimisthub-spif vcs https://github.com/optimisthub/scheduled-posts-issue-fixer
 composer require optimisthub/scheduled-posts-issue-fixer
 ```
+
+### Bedrock ile kurulum
+
+[Bedrock](https://roots.io/bedrock/) kullanıyorsanız eklenti, `type`
+alanı `wordpress-plugin` olduğu için `composer/installers` tarafından
+doğru dizine yerleştirilir. Projenizin `composer.json` dosyasına şunları
+ekleyin:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/optimisthub/scheduled-posts-issue-fixer"
+        }
+    ],
+    "require": {
+        "optimisthub/scheduled-posts-issue-fixer": "^2.0"
+    },
+    "extra": {
+        "installer-paths": {
+            "web/app/plugins/{$name}/": ["type:wordpress-plugin"]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
+```
+
+Ardından:
+
+```bash
+composer update optimisthub/scheduled-posts-issue-fixer
+```
+
+Eklenti `web/app/plugins/scheduled-posts-issue-fixer/` dizinine kurulur.
+Etkinleştirmek için:
+
+```bash
+wp plugin activate scheduled-posts-issue-fixer
+```
+
+> **Not:** `installer-paths` tanımı olmadan eklenti `vendor/` altına
+> kurulur ve WordPress onu görmez.
 
 ## Sıkça Sorulan Sorular
 
