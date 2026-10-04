@@ -54,7 +54,10 @@ Bu eklenti, zamanı geçmiş ama hâlâ `future` durumunda bekleyen yazıları b
 
 ### Composer ile kurulum
 
+Bu paket Packagist'te yayınlanmadığı için önce VCS deposu olarak tanıtmanız gerekir:
+
 ```bash
+composer config repositories.optimisthub-spif vcs https://github.com/optimisthub/scheduled-posts-issue-fixer
 composer require optimisthub/scheduled-posts-issue-fixer
 ```
 
