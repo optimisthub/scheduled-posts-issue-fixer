@@ -1,4 +1,4 @@
-<img src="https://ps.w.org/scheduled-posts-issue-fixer/assets/banner-1544x500.png" alt="Scheduled Posts Issue Fixer" style="float: left; width:100%; margin-bottom:30px" />
+<img src="https://ps.w.org/scheduled-posts-issue-fixer/assets/banner-1544x500.png?rev=3729079" alt="Scheduled Posts Issue Fixer" style="float: left; width:100%; margin-bottom:30px" />
 
 # Scheduled Posts Issue Fixer
 
